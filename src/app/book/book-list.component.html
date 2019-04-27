@@ -1,0 +1,29 @@
+<div class="container">
+    <h4 style="background-color: black; color:white">Books</h4>
+</div>
+<div class="container">
+    <table class="table table-bordered" *ngIf = "books &&  books.length">
+        <thead>
+            <tr>
+                <th>Book Image</th>
+                <th>Book Title</th>
+                <th>Book Price</th>
+                <th>Book Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>
+                    <img routerLink="/book/{{book.bookId}}" src="{{book.imageUrl}}" width="70px" height="90px" />
+                </td>
+                <td>{{book.title}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.rating}}</td>
+                <td>
+                    <button type="button" class="btn btn-block" style="background-color: burlywood">Add To Cart</button>
+                    <button type="button" class="btn btn-block" style="background-color: coral">Buy Now</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
